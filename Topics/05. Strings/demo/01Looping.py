@@ -5,5 +5,5 @@ while index < len(fruit):
     print(index, letter)
     index = index + 1
 
-#for letter in fruit:
-#    print(letter)
+for index, letter in enumerate(fruit):
+    print(index, letter)
