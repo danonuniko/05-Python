@@ -9,16 +9,16 @@ from bs4 import BeautifulSoup
 import pathlib
 path = str(pathlib.Path(__file__).parent.absolute())
 
-email_pattern = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
-fresult = open(path + "/urls.txt", 'w')
+url_pattern = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
 
 with urllib.request.urlopen('http://python.org/') as response:
     charset = response.info().get_content_charset()
     html = response.read().decode(charset)
-    emails = re.findall(email_pattern, html)
+    emails = re.findall(url_pattern, html)
 
-for email in emails:
-    fresult.write(email + "\n")
+with open(path + "/urls.txt", 'w') as fresult:
+    for email in emails:
+        fresult.write(email + "\n")
 
 
 """
