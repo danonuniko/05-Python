@@ -50,6 +50,7 @@ class BankAccount:
             self.balance -= amount
         else:
             print("You cannot withdraw an amount higher than your actual balance")
+            
     def __str__(self):
         return f"Your actual balance is {self.balance} €"
 
@@ -60,5 +61,4 @@ print(cuenta_bancaria)
 cuenta_bancaria.withdraw(7500)
 print(cuenta_bancaria)
 cuenta_bancaria.withdraw(7500)
-
-
+print(cuenta_bancaria)
