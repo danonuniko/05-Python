@@ -16,3 +16,5 @@ if __name__ == '__main__':
     server_address = ('', 8000)
     httpd = HTTPServer(server_address, GetHandler)
     httpd.serve_forever()
+
+# Revisar resultado     http://localhost:8000/?text=hola
